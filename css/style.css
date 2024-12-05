@@ -1,0 +1,487 @@
+/* Start Variables*/
+:root{
+   --main-color: #10cab7;
+   --secondary-color: #2c4755;
+   --sections_padding:var(60px)
+}
+/*End Variables */
+
+/*Templates*/
+/*Heading of each section*/
+.heading{
+    margin: 0;
+    color: #ebeced;
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -3px;
+}
+.heading + p{
+    color: #797979;
+    font-size: 20px;
+    text-align: center;
+    margin-top: -30px;
+}
+
+@media (max-width:767px){
+    .heading{
+        font-size: 60px;
+    }
+    .heading + p{
+        margin-top: -20px;
+    }
+}
+
+/* Start Global Rules*/
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Work Sans" , sans-serif;
+}
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Responsive --> Bootstrap3 codes*/
+/*Small*/
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+/* Medium Screens */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large Screens */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Rules*/
+/*Start Header*/
+
+.header{
+    padding: 20px;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo{
+    width: 60px;
+}
+.header .container .links{
+    position: relative;
+}
+/*Make the bar icon in CSS*/
+.header .container .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .container .links .icon span{
+    background-color: black;
+    height: 2px;
+    margin-bottom: 5px;
+}
+
+.header .container .links .icon span:first-child{
+    width: 100%;
+}
+.header .container .links .icon span:nth-child(2){
+    width: 60%;
+    transition: 0.3s;
+}
+.header .container .links .icon span:last-child{
+    width: 100%;
+}
+
+/*End of styling bar icon*/
+
+/*Content of bar*/
+.header .container .links ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 10px);
+    display: none;
+}
+/*make width of icon_middle_span to 100%*/
+/*and display the list of links*/
+
+.header .links:hover {
+    .icon span:nth-child(2){
+        width: 100%;
+
+    }
+    ul{
+        display: block;
+        z-index: 1;
+    }
+}
+
+/*The arrow*/
+.header .container .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-color: transparent transparent #eee transparent;
+    border-style: solid;
+    position: absolute;
+    top: -19px;
+    right: 5px;
+
+}
+
+
+.header .container .links ul a{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    color: #333;
+    transition: 0.03s;
+
+}
+.header .container .links ul a:hover{
+    padding-left: 25px;
+    
+    
+}
+
+/*To make lines between links inside bar icon*/
+.header .container .links li:not(:last-child) a{
+    border-bottom: 1px solid black;    
+}
+/*End header styling*/
+
+/*Start page landing*/
+.landing_page{
+    height: calc(100vh - 64px);
+    width: 100%;
+    background-image: url(../images/mountainnn.jpg);
+    background-size: cover;
+    position: relative;
+}
+.landing_page .landing_text {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 400px;
+    max-width: 100%;
+}
+.landing_page .landing_text h{
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.landing_page .landing_text p{
+    font-size: 19px;
+    line-height: 25px;
+}
+/*End landing page*/
+
+/*Start Features*/
+.features ,.Portfolio ,.contact{
+    background-color: #f6f6f6;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.features .container .feat{
+    padding: 10px;
+    text-align: center;
+}
+.features .container .feat i {
+    color: var(--main-color);
+    font-size: 50px;
+}
+
+.features .container .feat h3{
+    font-weight: 800;
+    margin: 20px 0 30px 0;
+}
+.features .container .feat p{
+    color: grey;
+    line-height: 1.6;
+    font-size: 17px;
+}
+/*Start of services*/
+.services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+.services  .services_content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+}
+
+
+.services_content .poster img{
+    width: 250px;
+    height: 350px;
+}
+
+.srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+/*srv in mobile & small tablets*/
+@media (max-width:767px){
+    .srv{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.srv i{
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.srv .text{
+        flex: 1; /*for grow*/
+}
+.srv .text h3{
+    margin-top: 0; /*for reset*/
+    margin-bottom: 20px;
+}
+.srv .text p{
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.poster {
+    text-align: center;
+    position: relative;
+}
+.poster::before{
+   content: "";
+   background-color: var(--secondary-color);
+   width: 100px;
+   height: calc(100% + 100px);
+   top: -50px;
+   right: 0;
+   position: absolute;
+   z-index: -1;
+}
+
+/*hide image in small screens*/
+/*before large screens*/
+@media (max-width: 1199px){
+
+    .poster{
+        display: none;
+    }
+}
+
+/*Start portfolio*/
+
+.Portfolio img{
+    width: 350px;
+    height: 250px;
+}
+.portfolio_content{
+    margin-top: 80px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+.portfolio_content .text h2{
+    font-family: 400;
+    font-size: 20px;
+}
+.portfolio_content .text p{
+    font-family: 200;
+    color: #797979;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+.portfolio_content .text{
+    padding: 20px;
+    margin-top: -5px;
+    background-color: white;
+    width: 350px;
+}
+/*portfolio in small phones*/
+@media (max-width: 767px){
+    .Portfolio img{
+        width: 100%;
+        height: max-content;
+    }
+    .Portfolio .text{
+        width: 100%;
+    }
+}
+
+/*Start About Section*/
+.About{
+    background-color: white;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.About_content{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+
+}
+
+/*image div*/
+.About .image{
+    position: relative;
+    width: 250px;
+    height: 375px;
+    z-index: 2;
+}
+.About .image img{
+    max-width:  100%;
+    
+}
+.About .About_content .image::before{
+    content: '';
+    width: 100px;
+    height: calc(100% + 80px);
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    background-color: #ebeced;
+    z-index: -1;
+    
+}
+.About .About_content .image::after{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    right: -150px;
+    top: -40px;
+    z-index: -1; 
+    
+}
+
+.About .text_side h6{
+    font-size: 17px;
+    padding-bottom: 40px;
+    font-family: 200;
+    line-height: 1.6;
+    
+}
+.About .text_side hr{
+    width: 50%;
+    border-color: var(--main-color);
+    margin-right: 50%;
+}
+.About .text_side p{
+    font-size: 17px;
+    padding-bottom: 40px;
+    font-family: 200;
+    color: #777;
+    line-height: 1.6;
+    
+}
+
+/* before medium screens*/
+@media (max-width: 991px){
+    .About .About_content {
+        
+        text-align: center;
+    }
+    .About .About_content hr , .About .image{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    
+    .About_content .image::after , .About_content .image::before{
+        display: none;
+    }
+}
+/*Start Contact Section*/
+.contact_content{
+    text-align: center;
+    padding-top: 30px;
+}
+.contact_content > p{
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact_content a{
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: 800;
+    text-decoration: none;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.social i{
+    color: var(--secondary-color);
+}
+
+/*Contact in Small Mobiles*/
+@media (max-width: 767px){
+    .contact_content > p , .contact_content a{
+        font-size: 25px;
+    }
+}
+
+/*Footer*/
+.footer{
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: white;
+    padding: 30px 10px;
+    font-size: 18px;
+   
+}
+.footer span{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+
+/*To support scrolling smoothly*/
+html{
+    scroll-behavior: smooth;
+}
